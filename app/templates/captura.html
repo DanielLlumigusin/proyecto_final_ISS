@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de Paquetes</title>
+</head>
+<body>
+    <h1>Paquetes Capturados</h1>
+    <ul>
+        {% for paquete in paquetes %}
+            <li>{{ paquete }}</li>  <!-- Aquí puedes formatear los datos del paquete como desees -->
+        {% endfor %}
+    </ul>
+</body>
+</html>

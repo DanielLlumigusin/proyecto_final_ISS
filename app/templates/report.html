@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de Ataques</title>
+</head>
+<body>
+    <h1>Reportes de Ataques</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de Ataque</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for reporte in reportes %}
+            <tr>
+                <td>{{ reporte.id }}</td>
+                <td>{{ reporte.ataque }}</td>
+                <td>{{ reporte.fecha }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Volver al Monitoreo</a>
+</body>
+</html>

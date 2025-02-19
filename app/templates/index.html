@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Monitoreo de Ataques</title>
+</head>
+<body>
+    <h1>Monitoreo de Ataques en Tiempo Real</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de Ataque</th>
+                <th>Origen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ataque in ataques %}
+            <tr>
+                <td>{{ ataque.id }}</td>
+                <td>{{ ataque.tipo }}</td>
+                <td>{{ ataque.origen }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/reportes">Ver Reportes</a>
+</body>
+</html>
