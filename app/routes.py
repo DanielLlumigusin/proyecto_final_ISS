@@ -14,7 +14,7 @@ def index():
 def capturar():
     interface = "Ethernet"
     iniciar_captura(interface)
-    return render_template('captura.html', mensaje="Captura de paquetes iniciada.")
+    return render_template('captura.html', mensaje="Captura de paquetes iniciada.", paquetes=capturar_paquetes)
 
 @main.route('/reportes')
 def reportes():
@@ -31,5 +31,5 @@ def obtener_ataques_en_tiempo_real():
 def iniciar_captura(interface):
     """Inicia la captura de paquetes en un hilo separado."""
     thread = threading.Thread(target=capturar_paquetes, args=(interface,))
-    thread.daemon = True  # Permitir que el hilo se cierre cuando se cierre la aplicación
+    thread.daemon = True  
     thread.start()

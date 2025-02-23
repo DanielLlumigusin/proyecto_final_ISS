@@ -7,25 +7,30 @@
     <title>Monitoreo de Ataques</title>
 </head>
 <body>
-    <h1>Monitoreo de Ataques en Tiempo Real</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tipo de Ataque</th>
-                <th>Origen</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for ataque in ataques %}
-            <tr>
-                <td>{{ ataque.id }}</td>
-                <td>{{ ataque.tipo }}</td>
-                <td>{{ ataque.origen }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a href="/reportes">Ver Reportes</a>
+    <div class="container">
+        <h1 class="title-index">Monitoreo de Ataques en Tiempo Real</h1>
+        <table class="wireshark-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo de Ataque</th>
+                    <th>Origen</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for ataque in ataques %}
+                <tr>
+                    <td>{{ ataque.id }}</td>
+                    <td>{{ ataque.tipo }}</td>
+                    <td>{{ ataque.origen }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="links">
+            <a class="button" href="/reportes">Ver Reportes</a>
+            <a class="button" href="/capturar">Ver Capturas</a>
+        </div>
+    </div>
 </body>
 </html>
